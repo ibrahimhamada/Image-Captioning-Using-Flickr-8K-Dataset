@@ -84,12 +84,15 @@ Each of the 6 models was trained for 100 epochs, then the performance of each mo
 
 We present below the results obtained from each of the 6 models using our 5 approaches and the results of testing the models on randomly selected images from the internet.
 
+![image](https://github.com/ibrahimhamada/Image-Captioning-Using-Flickr-8K-Dataset/assets/58476343/7d3a5c41-0d9c-47e7-b3d6-d1538a117339)
+
+This table summarizes the BLEU scores of each model.
+
 ![image](https://github.com/ibrahimhamada/Image-Captioning-Using-Flickr-8K-Dataset/assets/58476343/701c5797-a96c-49a8-ad98-dd85c91c2d3e)
 
 The detailed results are shown in the attached report, but here are some output results of the best model (Model with Xception and GloVe 300d).
 
 ![image](https://github.com/ibrahimhamada/Image-Captioning-Using-Flickr-8K-Dataset/assets/58476343/94d313c0-d2ce-4805-919e-ba3e25442123)
 
-![image](https://github.com/ibrahimhamada/Image-Captioning-Using-Flickr-8K-Dataset/assets/58476343/7d3a5c41-0d9c-47e7-b3d6-d1538a117339)
 
 
