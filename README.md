@@ -54,3 +54,42 @@ The third part of our model is a concatenation between the two models. After con
 
 ![image](https://github.com/ibrahimhamada/Image-Captioning-Using-Flickr-8K-Dataset/assets/58476343/91a22fb0-79dd-4692-925b-5213114bba7a)
 
+## Implementation:
+
+As explained in the above sections, the full architecture contains both image and language models. 
+
+The image model is used to obtain features vectors that represent each image, while the language model is used to get the representation of words in captions. For the image model, we decided to use both ResNet50 and Xception models. 
+
+For the language model, embedding layers with GloVe (Global Vectors for Word Representation) are used. Global vectors for word representation are referred to as GloVe. By combining the global word-word co-occurrence matrix from a corpus, Stanford researchers created an unsupervised learning technique for creating word embeddings. Interesting linear substructures of the word are displayed in vector space by the resulting embeddings. Unlike Word2vec, which solely uses local language information. That is, only the words around a word have an impact on the semantics that are learned for it. By resolving three significant issues, GloVe accomplishes its mission. 
+There are different versions of GloVe based on the number of tokens, words, and size of representation vector. GloVe 60B is used as a pretrained embedding layer in our implementation which contains 6 Billion tokens and the used representation sizes are 50, and 300.
+
+Accordingly, In order to reach the maximum BLEU Score, both ResNet50 and Xception models are used for image feature extraction, and GloVe 60B with both embedding size of 50 and 300 are used in the language model.
+
+In total, 6 models were built and tested, then a comparison between their performance was held.
+1) Model with ResNet50 and No GloVe
+2) Model with ResNet50 and GloVe 50d
+3) Model with ResNet50 and GloVe 300d
+4) Model with Xception and No GloVe
+5) Model with Xception and GloVe 50d
+6) Model with Xception and GloVe 300d
+
+Each of the 6 models was trained for 100 epochs, then the performance of each model is tested using samples from the test dataset following 5 approaches.
+1) Greedy Approach
+2) Beam Search with K = 3
+3) Beam Search with K = 5
+4) Beam Search with K = 7
+5) Beam Search with K = 10
+
+## Results:
+
+We present below the results obtained from each of the 6 models using our 5 approaches and the results of testing the models on randomly selected images from the internet.
+
+![image](https://github.com/ibrahimhamada/Image-Captioning-Using-Flickr-8K-Dataset/assets/58476343/701c5797-a96c-49a8-ad98-dd85c91c2d3e)
+
+The detailed results are shown in the attached report, but here are some output results of the best model (Model with Xception and GloVe 300d).
+
+![image](https://github.com/ibrahimhamada/Image-Captioning-Using-Flickr-8K-Dataset/assets/58476343/94d313c0-d2ce-4805-919e-ba3e25442123)
+
+![image](https://github.com/ibrahimhamada/Image-Captioning-Using-Flickr-8K-Dataset/assets/58476343/7d3a5c41-0d9c-47e7-b3d6-d1538a117339)
+
+
